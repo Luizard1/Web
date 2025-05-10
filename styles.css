@@ -1,0 +1,113 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background:
+      url('Media/Collage.png') center/cover no-repeat;
+    background-blend-mode: overlay;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+min-height: 100vh;
+display: flex;
+align-items: center;
+justify-content: center;
+padding: 20px;
+}
+
+.contenedor-cartas {
+  position: relative;
+  max-width: 600px;
+  width: 100%;
+}
+
+.card-principal {
+  background-color: rgba(255, 255, 255, 0.85);
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  animation: fadeIn 2s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.card-principal h1 {
+  color: #d14e4e;
+  margin-bottom: 20px;
+  font-size: 2rem;
+}
+
+.card-principal p {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.signature {
+  margin-top: 30px;
+  font-style: italic;
+  color: #888;
+}
+
+/* Cartas pequeñas */
+.card-pequena {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  background-color: rgba(255, 255, 255, 0.75);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  z-index: 0;
+  animation: fadeIn 2s ease;
+}
+
+.top-left {
+  top: -30px;
+  left: -30px;
+}
+
+.top-right {
+  top: -30px;
+  right: -30px;
+}
+
+.bottom-left {
+  bottom: -30px;
+  left: -30px;
+}
+
+.bottom-right {
+  bottom: -30px;
+  right: -30px;
+}
+
+/* Animación */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive: oculta las cartas pequeñas en móviles pequeños */
+@media (max-width: 480px) {
+  .card-pequena {
+    display: none;
+  }
+
+  .card-principal {
+    padding: 20px;
+  }
+
+  .card-principal h1 {
+    font-size: 1.5rem;
+  }
+
+  .card-principal p {
+    font-size: 1rem;
+}
